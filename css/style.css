@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* 1rem = 16px */
+h1 {
+    font-family: 'Times New Roman';
+    font-size: 3rem;
+    color: black;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    color: black;
+}
+
+img {
+    width: 100%;
+}
+
+#header {
+    background-color: rgb(255, 175, 109);
+    padding: 30px;
+    text-align: center;
+}
+
+#row {
+    /* use flexbox on the parent div to layout a row or column of a child div*/
+    display: flex;
+    /* use row for desktop and tablet layout */
+    flex-direction: row;
+    /* wrap is used with a smart tablet layout to create an extra row */
+    flex-wrap: wrap;
+}
+
+.column {
+    /* sets flex-grow to 1, flex-shrink to 1 and flex-basis to 1 
+    flex-basis of 1 means child columns will have equal width*/
+    flex: 1;
+    /*because box-sizing = border box, padding is counted as part of the overall width of the column */
+    padding: 10px;
+}
+
+#col1 {
+    background-color: rgb(240, 240, 172);
+}
+
+#col2 {
+    background-color: rgb(190, 121, 96);
+}
+
+#col3 {
+    background-color: rgb(224, 165, 224);
+}
+
+#col4 {
+    background-color: rgb(192, 149, 231);
+}
+
+#footer {
+    background-color: rgb(255, 175, 109);
+    padding: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .column {
+        min-width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .column {
+        min-width: 100%
+    }
+
+    .row {
+        flex-direction: column;
+    }
+    h1{
+        font-size: 4rem
+    }
+    p{
+        font-size: 3rem;
+    }
+}
